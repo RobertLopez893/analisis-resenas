@@ -37,7 +37,7 @@ def limpiar_resena(texto):
 
 
 # Carga del dataset con solo inglés
-df = pd.read_csv('../data/processed/steam_reviews_english_only.csv')
+df = pd.read_csv('data/processed/steam_reviews_english_only.csv')
 
 # Feature Selection
 df = df[['review_text', 'voted_up']]
@@ -70,6 +70,6 @@ df_final = df_balanced[['review_clean', 'voted_up']]
 df_final = df_final[df_final['review_clean'].str.len() > 0]
 
 # Guardar el dataset final
-df_final.to_csv('../data/final/final_data.csv', index=False)
+df_final.to_csv('data/final/final_data.csv', index=False)
 
 print(f"Dataset guardado como 'final_data.csv' con {len(df_final)} filas.")
